@@ -97,14 +97,11 @@ ocNth n (Cons2 _ b l) = ocNth (n-1) (Cons b l)
 traceme :: Show a => String -> a -> a
 traceme s a = trace (s ++ " " ++ (show a)) a
 
-bang :: a -> a
-bang !a = a
-
 -- traceBytes :: String -> DeflateParse ()
 -- traceBytes q = do
 --   (!_, !by, !_) <- gets strIn
 --   l <- gets inLen
---   return $ bang $ trace (q ++ " " ++ (show by) ++ " of " ++ (show l) ++ " bytes processed") ()
+--   return $ trace (q ++ " " ++ (show by) ++ " of " ++ (show l) ++ " bytes processed") ()
 
 data CodeTree a = EmptyLeaf | Leaf a | Fork (CodeTree a) (CodeTree a)
 
